@@ -1,0 +1,17 @@
+
+.ContainerTable {
+    color: rgb(0, 136, 255);
+    border-collapse: collapse;
+    border: 3px solid black;
+
+    width: 90vw;
+}
+
+.ContainerTable thead th {
+    border: 1px solid black;
+    border-right: 2px solid black;
+}
+
+.ContainerTable tbody tr td {
+    border-right: 2px solid black;
+}

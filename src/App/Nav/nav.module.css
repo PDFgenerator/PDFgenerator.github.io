@@ -6,6 +6,8 @@
     align-items: center;
 
     padding: 1.5vh 0;
+
+    width: 100vw;
 }
 
 .nav button {
