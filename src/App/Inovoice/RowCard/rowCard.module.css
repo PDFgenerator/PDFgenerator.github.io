@@ -1,0 +1,39 @@
+input {
+    width: 100%;
+    border-style: none;
+    text-align: right;
+}
+
+.InputText {
+    text-align: left !important;
+}
+
+.RowStyles {
+    border-left: 2px solid black;
+}
+
+.RowStyles td {
+    border-right: 2px solid black;
+}
+
+.FirstInput {
+    
+    display: flex;
+    flex-direction: row;
+
+    padding: 5px;
+    margin-right: -1px;
+}
+
+.FirstInput button {
+    border: none;
+    background: none;
+}
+
+.FirstInput button img{
+    width: 50px;
+}
+
+.Bucket {
+    width: 60px !important;
+}

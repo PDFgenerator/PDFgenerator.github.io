@@ -1,17 +1,48 @@
 
 .ContainerTable {
-    color: rgb(0, 136, 255);
+    margin-top: 2%;
+
     border-collapse: collapse;
     border: 3px solid black;
 
-    width: 90vw;
+    width: 90%;
 }
 
-.ContainerTable thead th {
+.FirstTitle {
+    border-left: 2px solid black !important;
+}
+
+.ContainerTable div thead th {
     border: 1px solid black;
     border-right: 2px solid black;
+    font-weight: 600;
 }
 
-.ContainerTable tbody tr td {
+.ContainerTable footer {
+    width: 100%;
+
+    text-align: right;
+    border-top: 3px solid black;
     border-right: 2px solid black;
+    border-left: 2px solid black;
+
+    padding-right: 10px;
 }
+
+.ButtonPlus {
+    border: 2px solid black !important;
+    border-bottom: 0px !important;
+    padding: 8px 0px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    border: none;
+    background: none;
+}
+
+.ButtonPlus img {
+    width: 25px;
+}
+
