@@ -43,6 +43,11 @@
 }
 
 .ButtonPlus img {
-    width: 25px;
+    width: 30px;
+    transition: all 0.1s linear;
+}
+
+.ButtonPlus img:hover {
+    transform: scale(1.15);
 }
 
