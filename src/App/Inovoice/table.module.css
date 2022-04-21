@@ -2,20 +2,53 @@
 .ContainerTable {
     margin-top: 2%;
 
-    border-collapse: collapse;
     border: 3px solid black;
 
     width: 90%;
 }
+/* 
+table {
+    border-collapse: collapse;
+} */
 
 .FirstTitle {
     border-left: 2px solid black !important;
+    width: 10%!important;
 }
 
-.ContainerTable div thead th {
+.code { width: 10%!important; }
+.description { width: 20%!important; }
+.cases { width: 10%!important; }
+.un { width: 10%!important; }
+.net { width: 10%!important; }
+.gross { width: 10%!important; }
+.price { width: 10%!important; }
+.amount { width: 10%!important; }
+
+.ContainerTable section {
+    width: 100%;
+}
+
+.ContainerTable section header {
+    display: flex;
+    
+    width: 100%;
+}
+
+.ContainerTable section header h5 {
     border: 1px solid black;
     border-right: 2px solid black;
     font-weight: 600;
+    /* white-space: nowrap; */
+
+    margin: 0;
+    padding: 3px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ContainerTable footer {

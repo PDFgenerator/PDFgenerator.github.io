@@ -1,38 +1,51 @@
 input {
     width: 100%;
     border-style: none;
-    text-align: right;
-}
+    border-left: 1px solid black;
+    border-right: 2px solid black;
 
-.InputText {
-    text-align: left !important;
+    text-align: right;
+
+    padding: 0;
 }
 
 .RowStyles {
-    border-left: 2px solid black;
-}
-
-.RowStyles td {
-    border-right: 2px solid black;
-}
-
-.FirstInput {
-    
     display: flex;
-    flex-direction: row;
 
-    padding: 5px;
-    margin-right: -1px;
 }
+.FirstInput { 
+    width:10%; 
+    border-right: 2px solid black; 
+    border-left: 2px solid black;
+
+    display: flex;
+    padding: 4px 0;
+}
+.code { width: 10%; }
+.description { width: 20%; text-align: left !important;}
+.cases { width: 10%; }
+.un { width: 10%; }
+.net { width: 10%; }
+.gross { width: 10%; }
+.price { width: 10%; }
+.amount { width: 10%; }
 
 .FirstInput button {
     border: none;
     background: none;
+    width: 50%;
+    margin: 0!important;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .FirstInput button img {
-    width: 30px;
-    transition: all 0.1s linear;
+    width: 34%;
+    transition: all 0.1s linear;  
 }
 
 .FirstInput button img:hover {
@@ -40,5 +53,5 @@ input {
 }
 
 .Bucket {
-    width: 35px !important;
+    width: 35% !important;
 }
