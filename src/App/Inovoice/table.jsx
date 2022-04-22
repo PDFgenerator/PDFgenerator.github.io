@@ -7,6 +7,10 @@ function Table() {
 
     let array = DataService.table;
 
+    const create = () => {
+        console.log("vreo algo")
+    }
+
     return (
       <div className={css.ContainerTable}>
           <section>
@@ -28,6 +32,7 @@ function Table() {
                     // console.log(row.code);
                     return  <RowCard 
                                 key={index}
+                                id={row.id}
                                 code={row.code}
                                 description={row.description}
                                 cases={row.cases}
@@ -42,7 +47,7 @@ function Table() {
             
           </section>
 
-          <button className={css.ButtonPlus}><img src={plus} alt="plus" /></button>
+          <button onClick={ () => {create()} } className={css.ButtonPlus}><img src={plus} alt="plus" /></button>
           <footer>Total Amount USD&nbsp;&nbsp;&nbsp;&nbsp;90.480,00</footer>
       </div>
     );

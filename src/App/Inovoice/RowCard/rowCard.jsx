@@ -3,7 +3,7 @@ import bucket from "../../../Assets/borrar.svg";
 import disquete from "../../../Assets/disquete.svg";
 import { useState } from "react";
 import {DataService} from "../../../Repository/DataService.js";
-import { editableInputTypes } from "@testing-library/user-event/dist/utils";
+import { v4 as uuidv4 } from "uuid";
 
 export function RowCard(props) {
     
@@ -17,11 +17,13 @@ export function RowCard(props) {
     const [price, setPrice] = useState();
     const [amount, setAmount] = useState();
 
-    // const edit = (rowToEdit) => {
-    //     rowToEdit
+    const edit = (rowToEdit) => {
+        console.log(DataService.table.filter( row => row.id === rowToEdit.id))
+        let row = DataService.table.filter( row => row.id === rowToEdit.id)
+        let index = DataService.table.indexOf(row[0])
 
-    //     DataService.table.filter()
-    // }
+        DataService.table[index] = rowToEdit;
+    }
 
     const save = (e) => {
         e.preventDefault()
@@ -37,7 +39,7 @@ export function RowCard(props) {
         if (!price) {row.price = props.price};
         if (!amount) {row.amount = props.amount};
 
-        // id === row.id ? edit(row) : create(row);
+        edit(row)
 
         console.log(row)
         console.log(DataService.table)
