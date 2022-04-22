@@ -1,4 +1,4 @@
-export const DataService = {
+export let DataService = {
     header:{ 
         proforma: {code:"6604962"}
     },
@@ -13,7 +13,18 @@ export const DataService = {
             gross: "0.000",
             price: "0.00",
             amount: "0.00",
-        }
+        },
+        {
+            id: 2,
+            code: "2",
+            description: "example",
+            cases: "0",
+            un: "0.000",
+            net: "0.000",
+            gross: "0.000",
+            price: "0.00",
+            amount: "0.00",
+        },
     ],
     totals:{
         vat: 0,
