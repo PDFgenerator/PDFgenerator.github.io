@@ -1,7 +1,15 @@
 import css from "./totalResults.module.css";
+import { DataService } from '../../../Repository/DataService';
+import { useEffect, useState } from "react";
 
 export function TotalResults() {
 
+    const [totals, setTotals] = useState(DataService.totals);
+
+    useEffect( () => {
+        setTotals(DataService.totals)
+    },[])
+    
     return (
         <div className={css.Container}>
             <section className={css.FirstSection}>
@@ -12,27 +20,27 @@ export function TotalResults() {
                 <article className={css.ContainerTotals}>
                     <div className={css.Totals}>
                         <p>VAT.........................:</p>
-                        <p>541982</p>
+                        <p>{totals.vat}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>GROSS WEIGHT......:</p>
-                        <p>8962</p>
+                        <p>{totals.grossWeight}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>NET WEIGHT...........:</p>
-                        <p>564168189</p>
+                        <p>{totals.netWeight}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>TOTAL CASES.........:</p>
-                        <p>864919</p>
+                        <p>{totals.totalCases}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>TOTAL UNITS..........:</p>
-                        <p>4682688</p>
+                        <p>{totals.totalUnits}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>TOTAL LITERS.........:</p>
-                        <p>69212621</p>
+                        <p>{totals.totalLiters}</p>
                     </div>
                 </article>
             </section>

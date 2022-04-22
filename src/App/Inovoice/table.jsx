@@ -2,8 +2,15 @@ import { RowCard } from './RowCard/rowCard';
 import css from './table.module.css';
 import plus from "../../Assets/plus.svg";
 import { DataService } from '../../Repository/DataService';
+import { useEffect, useState } from "react";
 
 function Table() {
+
+    const [total, setTotals] = useState(DataService.totals.totalAmountUSD);
+
+    useEffect( () => {
+        setTotals(DataService.totals.totalAmountUSD)
+    },[total])
 
     let array = DataService.table;
 
@@ -48,7 +55,7 @@ function Table() {
           </section>
 
           <button onClick={ () => {create()} } className={css.ButtonPlus}><img src={plus} alt="plus" /></button>
-          <footer>Total Amount USD&nbsp;&nbsp;&nbsp;&nbsp;90.480,00</footer>
+          <footer>Total Amount USD&nbsp;&nbsp;&nbsp;&nbsp;{total}</footer>
       </div>
     );
   }

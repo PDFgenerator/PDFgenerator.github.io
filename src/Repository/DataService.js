@@ -27,12 +27,13 @@ export let DataService = {
         },
     ],
     totals:{
-        vat: 0,
-        groosWeight: 0,
-        netWeight: 0,
+        totalAmountUSD: 0.00,
+        vat: 0.00,
+        grossWeight: 0.000,
+        netWeight: 0.000,
         totalCases: 0,
-        totalUnits: 0,
-        totalLiters: 0,
+        totalUnits: 0.000,
+        totalLiters: 0.000,
     },
     footer:{
         code: 802877926,
