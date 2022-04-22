@@ -3,19 +3,36 @@ import css from './table.module.css';
 import plus from "../../Assets/plus.svg";
 import { DataService } from '../../Repository/DataService';
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function Table() {
 
     const [total, setTotals] = useState(DataService.totals.totalAmountUSD);
+    const [array, setArray] = useState();
+    const [loading, setLoading] = useState(false)
 
     useEffect( () => {
+        setArray(DataService.table)
         setTotals(DataService.totals.totalAmountUSD)
-    },[total])
-
-    let array = DataService.table;
+        setLoading(true)
+    },[loading])
 
     const create = () => {
-        console.log("vreo algo")
+        setLoading(true)
+
+        let newROW = {
+            id: uuidv4(),
+            code: "1",
+            description: "example",
+            cases: "0",
+            un: "0.000",
+            net: "0.000",
+            gross: "0.000",
+            price: "0.00",
+            amount: "0.00",
+        }
+
+        array.push(newROW)
     }
 
     return (
@@ -32,9 +49,8 @@ function Table() {
                 <h5 className={css.amount}>AMOUNT</h5>
                 <h5 className={css.FirstTitle}></h5>
             </header>
-            
-            {/* {console.log(DataService.table)} */}
-            {   
+            {console.log(array)}
+            {   loading?
                 array.map( (row, index) => {
                     // console.log(row.code);
                     return  <RowCard 
@@ -50,11 +66,11 @@ function Table() {
                                 amount={row.amount}
                             />
                 })
+                :"is loading"
             }
-            
           </section>
 
-          <button onClick={ () => {create()} } className={css.ButtonPlus}><img src={plus} alt="plus" /></button>
+          <button onClick={ () => {create(); setLoading(false)} } className={css.ButtonPlus}><img src={plus} alt="plus" /></button>
           <footer>Total Amount USD&nbsp;&nbsp;&nbsp;&nbsp;{total}</footer>
       </div>
     );

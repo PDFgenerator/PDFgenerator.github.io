@@ -3,7 +3,6 @@ import bucket from "../../../Assets/borrar.svg";
 import disquete from "../../../Assets/disquete.svg";
 import { useState } from "react";
 import {DataService} from "../../../Repository/DataService.js";
-import { v4 as uuidv4 } from "uuid";
 
 export function RowCard(props) {
     
