@@ -6,6 +6,30 @@ export function TotalResults() {
 
     const [totals, setTotals] = useState(DataService.totals);
 
+    let array = DataService.table
+
+    //let cases = DataService.table[0].cases
+    
+    //console.log(typeof parseFloat(cases))
+
+    const sum = () => {
+        let arrayCases = array.map(
+            row => (parseFloat(row.cases))
+        )
+    
+        let initialValue = 0;
+    
+        let totalCases = arrayCases.reduce(
+            (value1, value2) => value1 + value2,
+            initialValue  
+        );
+    
+        console.log(totalCases)
+    }
+
+    sum()
+   
+
     useEffect( () => {
         setTotals(DataService.totals)
     },[])
