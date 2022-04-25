@@ -2,7 +2,7 @@ import css from "./rowCard.module.css";
 import bucket from "../../../Assets/borrar.svg"; 
 import disquete from "../../../Assets/disquete.svg";
 import { useState } from "react";
-import {DataService} from "../../../Repository/DataService.js";
+import {DataService, updateTotals} from "../../../Repository/DataService.js";
 
 export function RowCard(props) {
     
@@ -39,7 +39,8 @@ export function RowCard(props) {
         if (!amount) {row.amount = props.amount};
 
         edit(row)
-
+        updateTotals()
+        props.setIsSaved(true)
         console.log(row)
         console.log(DataService.table)
     }
@@ -54,7 +55,7 @@ export function RowCard(props) {
             <input defaultValue={props.net} onChange={ (e) => setNet(e.target.value) }         className={css.net} type="number" step="0.001" required/>
             <input defaultValue={props.gross} onChange={ (e) => setGross(e.target.value) }       className={css.gross} type="number" step="0.001" required/>
             <input defaultValue={props.price} onChange={ (e) => setPrice(e.target.value) }       className={css.price} type="number" step="0.01" required/>
-            <input defaultValue={props.amount} onChange={ (e) => setAmount(e.target.value) }      className={css.amount} type="number" step="0.01" required/>
+            <input defaultValue={props.amount} onChange={ (e) => setAmount(e.target.value) }      className={css.amount} type="number" step="0.01" disabled/>
             
             <div className={css.FirstInput}>
                 <button type="submit" ><img src={disquete} alt="disquete" /></button>

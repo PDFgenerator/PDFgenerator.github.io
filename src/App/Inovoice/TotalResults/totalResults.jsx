@@ -1,15 +1,19 @@
 import css from "./totalResults.module.css";
-import { DataService } from '../../../Repository/DataService';
+import { DataService, updateTotals } from '../../../Repository/DataService';
+
 import { useEffect, useState } from "react";
 
-export function TotalResults() {
+export function TotalResults({isSaved, setIsSaved}) {
 
     const [totals, setTotals] = useState(DataService.totals);
 
     useEffect( () => {
         setTotals(DataService.totals)
-    },[])
-    
+        updateTotals()
+        setIsSaved(false)
+    },[isSaved])
+
+
     return (
         <div className={css.Container}>
             <section className={css.FirstSection}>
@@ -24,19 +28,19 @@ export function TotalResults() {
                     </div>
                     <div className={css.Totals}>
                         <p>GROSS WEIGHT......:</p>
-                        <p>{totals.grossWeight}</p>
+                        <p>{totals.gross}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>NET WEIGHT...........:</p>
-                        <p>{totals.netWeight}</p>
+                        <p>{totals.net}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>TOTAL CASES.........:</p>
-                        <p>{totals.totalCases}</p>
+                        <p>{totals.cases}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>TOTAL UNITS..........:</p>
-                        <p>{totals.totalUnits}</p>
+                        <p>{totals.un}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>TOTAL LITERS.........:</p>
