@@ -8,14 +8,14 @@ import { v4 as uuidv4 } from "uuid";
 
 function Table() {
 
-    const [total, setTotals] = useState(DataService.totals.totalAmountUSD);
+    const [total, setTotals] = useState(DataService.totals.amount);
     const [array, setArray] = useState([]);
     const [loading, setLoading] = useState(false)
     const [isSaved, setIsSaved] = useState(false)
 
     useEffect( () => {
         setArray(DataService.table)
-        setTotals(DataService.totals.totalAmountUSD)
+        setTotals(DataService.totals.amount)
         setLoading(true)
     },[loading])
 
@@ -37,7 +37,8 @@ function Table() {
         array.push(newROW)
     }
 
-    console.log("Rows counter: ", array.length)
+    // console.log("Rows counter: ", array.length)
+    console.log("Rows counter: ", array)
 
     return (
         <div>
@@ -68,7 +69,7 @@ function Table() {
                                         net={row.net}
                                         gross={row.gross}
                                         price={row.price}
-                                        amount={row.cases*row.price}
+                                        amount={row.amount}
                                         setIsSaved={setIsSaved}
                                     />
                         })

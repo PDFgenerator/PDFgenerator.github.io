@@ -7,23 +7,23 @@ export let DataService = {
             id: 1,
             code: "1",
             description: "example",
-            cases: "6",
+            cases: 6,
             un: "0.000",
             net: "0.000",
             gross: "0.000",
-            price: "2.00",
-            amount: "0.00",
+            price: 2.00,
+            amount: 0.00,
         },
         {
             id: 2,
             code: "2",
             description: "example",
-            cases: "4",
+            cases: 4,
             un: "0.000",
             net: "0.000",
             gross: "0.000",
-            price: "0.00",
-            amount: "0.00",
+            price: 0.00,
+            amount: 0.00,
         },
     ],
     totals:{
@@ -66,5 +66,6 @@ export function updateTotals() {
     atributtes.forEach(
         atributte => DataService.totals[atributte] = sum(atributte)
     )
-    console.log(DataService.totals)
+    console.log(DataService.totals,     DataService.totals["amount"] = sum("amount")
+    )
 }
