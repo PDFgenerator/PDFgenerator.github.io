@@ -1,6 +1,26 @@
 export let DataService = {
     header:{ 
-        proforma: {code:"6604962"}
+        proformaInvoice: {
+            code:"6604962",
+            dateInit:"26/04/2022",
+            page:1
+        },
+        initInvoice: {
+            dateInit:"26/04/2022",
+            timeInit:"12:10:11",
+            printed:"15:29:35",
+            dateRequest:"30/04/2022"
+        },
+        deliveryAdress: {
+            code: 200446,
+            adress: "NIC INTERNATIONAL\nCENTRAL PLAZA (5TH FLOOR)\nROOM NUMBER-01 O.R. NIZAMROAD\nCHITAGONG",
+            country:"Bangladesh"
+        },
+        invoiceAdress: {
+            code: 200446,
+            adress: "NIC INTERNATIONAL\nCALLE BALMES 266\n08006-BARCELONA",
+            country: "Spain"
+        }
     },
     table:[
         {
@@ -36,7 +56,7 @@ export let DataService = {
         totalLiters: 0.000,
     },
     footer:{
-        code: 802877926,
+        code: "B02877926",
         direction: "CALLE BALMES 266 08006 - Barcelona, Spain.",
         numberPhone: "+34 647 972 933",
         email: "nazrulgb@yahoo.com"
