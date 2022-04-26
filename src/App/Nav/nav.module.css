@@ -1,15 +1,53 @@
 .nav {
-    background-color: blueviolet;
+    background-color: #3CAEA3;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
+    border-radius: 0px 0px 30px 30px;
     padding: 1.5vh 0;
+    box-shadow: 0px 4px 7px 2px rgba(135, 135, 135, 0.574);
 
     width: 100vw;
 }
 
-.nav button {
-    margin: 0 18vw;
+.nav p {
+    width: 20%;
+    color: #BCE9E5;
+    font-size: 1.8rem;
 }
+
+.Generate {
+    width: 50% !important;
+}
+
+.Generate button {
+    border: none;
+    border-radius: 10px;
+    padding: 1.2%;
+    background-color: #BCE9E5;
+    transition: all ease-in-out 0.3s;
+}
+
+.Generate button:hover {
+    transform: scale(1.1);
+}
+
+.Generate button p {
+    color: #3CAEA3;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+.ContainerBurguer{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+}
+
+.ContainerBurguer img {
+    width: 10%;
+}
+
