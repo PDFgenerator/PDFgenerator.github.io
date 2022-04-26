@@ -7,19 +7,19 @@ export let DataService = {
             id: 1,
             code: "1",
             description: "example",
-            cases: 6,
-            un: "0.000",
+            cases: 0,
+            un: "0",
             net: "0.000",
             gross: "0.000",
-            price: 2.00,
+            price: 0.00,
             amount: 0.00,
         },
         {
             id: 2,
             code: "2",
             description: "example",
-            cases: 4,
-            un: "0.000",
+            cases: 0,
+            un: "0",
             net: "0.000",
             gross: "0.000",
             price: 0.00,
@@ -47,6 +47,12 @@ export let DataService = {
 let array = DataService.table
 let atributtes = ["cases", "un", "net", "gross", "amount"]
 
+export function calculateAmount(param) {
+    param.forEach(
+        row => row.amount = row.cases*row.price
+    )
+}
+
 export function updateTotals() {
     const sum = (param) => {
         let arrayParam = array.map(
@@ -66,6 +72,8 @@ export function updateTotals() {
     atributtes.forEach(
         atributte => DataService.totals[atributte] = sum(atributte)
     )
-    console.log(DataService.totals,     DataService.totals["amount"] = sum("amount")
-    )
+    
+   
+
+    console.log(DataService.totals, DataService.totals["amount"] = sum("amount"))
 }

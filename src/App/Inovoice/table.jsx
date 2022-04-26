@@ -2,7 +2,7 @@ import { RowCard } from './RowCard/rowCard';
 import { TotalResults } from './TotalResults/totalResults';
 import css from './table.module.css';
 import plus from "../../Assets/plus.svg";
-import { DataService } from '../../Repository/DataService';
+import { calculateAmount, DataService } from '../../Repository/DataService';
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -14,10 +14,11 @@ function Table() {
     const [isSaved, setIsSaved] = useState(false)
 
     useEffect( () => {
+        calculateAmount(DataService.table)
         setArray(DataService.table)
         setTotals(DataService.totals.amount)
         setLoading(true)
-    },[loading])
+    },[loading, isSaved])
 
     const create = () => {
         setLoading(true)
