@@ -13,18 +13,18 @@ export let DataService = {
             gross: "0.000",
             price: 0.00,
             amount: 0.00,
-        },
-        {
-            id: 2,
-            code: "2",
-            description: "example",
-            cases: 0,
-            un: "0",
-            net: "0.000",
-            gross: "0.000",
-            price: 0.00,
-            amount: 0.00,
-        },
+        }// ,
+        // {
+        //     id: 2,
+        //     code: "2",
+        //     description: "example",
+        //     cases: 0,
+        //     un: "0",
+        //     net: "0.000",
+        //     gross: "0.000",
+        //     price: 0.00,
+        //     amount: 0.00,
+        // },
     ],
     totals:{
         amount: 0.00,
@@ -75,5 +75,5 @@ export function updateTotals() {
     
    
 
-    console.log(DataService.totals, DataService.totals["amount"] = sum("amount"))
+    // console.log(DataService.totals, DataService.totals["amount"] = sum("amount"))
 }

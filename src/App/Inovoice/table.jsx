@@ -12,12 +12,14 @@ function Table() {
     const [array, setArray] = useState([]);
     const [loading, setLoading] = useState(false)
     const [isSaved, setIsSaved] = useState(false)
+    // const [isDeleting, setIsDeleting] = useState(false)
 
     useEffect( () => {
         calculateAmount(DataService.table)
         setArray(DataService.table)
         setTotals(DataService.totals.amount)
         setLoading(true)
+        // setIsDeleting(false)
     },[loading, isSaved])
 
     const create = () => {
@@ -38,11 +40,18 @@ function Table() {
         array.push(newROW)
     }
 
+    const deleteById = (id) => {
+        DataService.table = DataService.table.filter(row => row.id !== id) 
+
+        console.log(DataService.table)
+    }
+
     // console.log("Rows counter: ", array.length)
-    console.log("Rows counter: ", array)
+    // console.log("Rows counter: ", array)
 
     return (
         <div>
+            
             <div className={css.ContainerTable}>
                 <section>
                     <header>
@@ -72,6 +81,9 @@ function Table() {
                                         price={row.price}
                                         amount={row.amount}
                                         setIsSaved={setIsSaved}
+                                        deleteById={deleteById}
+                                        setIsDeleting={setLoading}
+                                        thisRow={row}
                                     />
                         })
                         :"is loading"
