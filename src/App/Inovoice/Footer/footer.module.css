@@ -1,0 +1,40 @@
+.Footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 3.5vh;
+}
+
+.ContaineLines {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Line {
+    width: 30%;
+    height: 3px;
+    background-color: black;
+    margin: 0% 2% 0 2%;
+}
+
+.Title {
+    white-space: nowrap;
+}
+
+.Contacto {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Contacto p {
+    display: flex;
+    align-items: center;
+}
+
+.Contacto p img {
+    width: 20px;
+}
