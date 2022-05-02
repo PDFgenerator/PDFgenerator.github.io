@@ -3,11 +3,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: absolute;
     bottom: 3.5vh;
+    margin-top: 3.5vh;
 }
 
-.ContaineLines {
+.ContainerLines {
     width: 100%;
     display: flex;
     justify-content: space-between;

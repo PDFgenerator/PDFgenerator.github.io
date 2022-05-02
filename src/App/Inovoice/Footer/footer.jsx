@@ -10,7 +10,7 @@ function Footer() {
 
     return(
         <div className={css.Footer}>
-            <section className={css.ContaineLines}>
+            <section className={css.ContainerLines}>
                 <div className={css.Line}></div>
                 <h2 className={css.Title}>Fasana Export-Import S.L.</h2>
                 <div className={css.Line}></div>
