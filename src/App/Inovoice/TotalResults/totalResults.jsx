@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export function TotalResults({isSaved, setIsSaved}) {
 
     const [totals, setTotals] = useState(DataService.totals);
+    const [liters, setLiters] = useState(0)
 
     useEffect( () => {
         setTotals(DataService.totals)
@@ -14,8 +15,15 @@ export function TotalResults({isSaved, setIsSaved}) {
     },[isSaved])
 
 
+    const save = (e) => {
+        e.preventDefault()
+
+        DataService.totals.totalLiters = liters
+    }
+
     return (
         <div className={css.Container}>
+            {console.log(DataService.totals)}
             <section className={css.FirstSection}>
                 <article className={css.Cfr}>
                     <p>CFR:CHITTAGONG</p>
@@ -44,7 +52,10 @@ export function TotalResults({isSaved, setIsSaved}) {
                     </div>
                     <div className={css.Totals}>
                         <p>TOTAL LITERS.........:</p>
-                        <p>{totals.totalLiters}</p>
+                        <form className={css.FormLiters} onSubmit={ save }>
+                            <input onChange={ (e) => setLiters(e.target.value)} className={css.LitersInput} type="number" required />
+                            <button type="submit"  >save</button>
+                        </form>
                     </div>
                 </article>
             </section>
