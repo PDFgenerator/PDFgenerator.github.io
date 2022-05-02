@@ -1,15 +1,17 @@
+import { DateTime } from "./Date"
+
 export let DataService = {
     header:{ 
         proformaInvoice: {
             code:"6604962",
-            dateInit:"26/04/2022",
+            dateInit: DateTime().date,
             page:1
         },
         initInvoice: {
-            dateInit:"26/04/2022",
-            timeInit:"12:10:11",
-            printed:"15:29:35",
-            dateRequest:"30/04/2022"
+            dateInit: DateTime().date,
+            timeInit: DateTime().time,
+            // printed:"15:29:35",
+            // dateRequest:"30/04/2022"
         },
         deliveryAdress: {
             code: 200446,
