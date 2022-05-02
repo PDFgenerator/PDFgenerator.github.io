@@ -30,6 +30,22 @@
     text-align: start;
 }
 
+.FormLiters {
+    display: flex;
+    flex-direction: row-reverse;
+
+    width: 55%;
+}
+.LitersInput {
+    width: 50%;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+
+    margin-left: 0.5vw;
+}
+
+
 .Comments {
     text-align: start;
 }
