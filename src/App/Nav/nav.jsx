@@ -6,7 +6,7 @@ function Nav() {
         <nav className={css.nav}>
             <p>Digital Invoice</p>
             <div className={css.Generate}>
-                <button><p>Generar PDF</p></button>
+                <button /*onClick={ () => pdf() }*/><p>Generate PDF</p></button>
             </div>
             <div className={css.ContainerBurguer}><img src={burger} alt="" /></div>
         </nav>

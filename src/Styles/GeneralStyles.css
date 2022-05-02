@@ -21,3 +21,9 @@ code {
 body {
   width: 100vw;
 }
+
+@media (max-width: 1140px) {
+  body {
+    
+  }
+}
