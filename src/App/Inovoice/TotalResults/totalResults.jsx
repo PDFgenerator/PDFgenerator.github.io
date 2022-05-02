@@ -31,7 +31,7 @@ export function TotalResults({isSaved, setIsSaved}) {
                 </article>
                 <article className={css.ContainerTotals}>
                     <div className={css.Totals}>
-                        <p>VAT.........................:</p>
+                        <p>VAT...........................:</p>
                         <p>{totals.vat}</p>
                     </div>
                     <div className={css.Totals}>
