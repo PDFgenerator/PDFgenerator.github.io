@@ -4,7 +4,7 @@ import { useState } from 'react';
 import email from '../../../Assets/mail.svg';
 import telefono from '../../../Assets/telefono.svg';
 
-export function Footer() {
+function Footer() {
 
     const [info, setInfo]= useState(DataService.footer)
 
@@ -27,3 +27,5 @@ export function Footer() {
     )
 
 }
+
+export default Footer;
