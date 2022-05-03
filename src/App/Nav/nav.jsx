@@ -1,7 +1,11 @@
 import css from './nav.module.css';
 import burger from '../../Assets/burger.svg';
+import { PDF } from '../../Repository/PDF';
 
 function Nav() {
+
+    PDF()
+
     return (
         <nav className={css.nav}>
             <p>Digital Invoice</p>
