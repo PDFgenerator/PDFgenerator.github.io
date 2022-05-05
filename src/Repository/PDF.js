@@ -2,6 +2,8 @@ import { jsPDF } from "jspdf";
 import { DataService } from "./DataService";
 import { DateTime } from "./Date";
 import logo from "../Assets/logo.png";
+import telefono from "../Assets/telefono.png";
+import mail from "../Assets/mail.png";
 
 function PDF() {
     const doc = new jsPDF();
@@ -11,7 +13,7 @@ function PDF() {
     const Size = (num) => { doc.setFontSize(num); }
 
     /* Title */
-    Size(13)
+    Size(14)
     Font("Bold")
     doc.text("Fasana Export - Import S.L.", 6 , 12);
     doc.line(6, 13, 105, 13);
@@ -90,10 +92,73 @@ function PDF() {
 
 
 
+    /* Table */
+
+    const headers = [
+        'CODE',
+        'DESCRIPTION',
+        'CASES',
+        'UN',
+        'NET_W',
+        'GROSS_W',
+        'PRICE',
+        'AMOUNT',
+    ]
+    const invoiceObjectTableRows = [
+    {
+        CODE: DataService.table[0].amount.toString(),
+        DESCRIPTION: 'testing',
+        CASES: 'testing',
+        UN: 'testing',
+        NET_W: 'testing',
+        GROSS_W: 'testing',
+        PRICE: 'testing',
+        AMOUNT: 'testing',
+    }
+]
+    const rows = () => {
+        let rows = DataService.table;
+        let result = [];
+
+        rows.forEach(row => {
+            let pdfRow = {
+                CODE: row.code.toString(),
+                DESCRIPTION: row.description.toString(),
+                CASES: row.cases.toString(),
+                UN: row.un.toString(),
+                NET_W: row.net.toString(),
+                GROSS_W: row.gross.toString(),
+                PRICE: row.price.toString(),
+                AMOUNT: row.amount.toString(),
+            }
+            result.push(pdfRow)
+        })
+        return result;
+    }
+    // console.log(rows())
+    doc.table(6, 100, rows(), headers, { autoSize: true })
+        
+
+    /* Footer */
+    Size(13)
+    Font("Bold")
+    doc.line(8, 270, 70, 270);
+    doc.text("Fasana Export-Import S.L.", 77, 271);
+    doc.line(140, 270, 202, 270);
+
+    Size(11)
+    Font("")
+    doc.text(`${DataService.footer.code}`, 95, 277)
+    doc.text(`${DataService.footer.direction}`, 63, 281.5)
+
+    doc.addImage(telefono, "PNG", 61, 282.5, 4, 4, "telefono", "NONE", 0);
+    doc.text(`${DataService.footer.numberPhone}`, 66, 285.5);
+    doc.addImage(mail, "PNG", 103, 283, 4, 3, "mail", "NONE", 0);
+    doc.text(`${DataService.footer.email}`, 108, 285.5);
 
 
 
-    doc.save("prueba1.pdf");
+    doc.save("prueba2.pdf");
 }
 
 export default PDF;
