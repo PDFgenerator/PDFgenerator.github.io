@@ -141,7 +141,34 @@ function PDF() {
             }
         )
     }
-        
+    
+    const Totals = () => {
+        Size(12)
+        Font("bold")
+        doc.text("Total Amount USD", 114.5, 210)
+        doc.text(`${DataService.totals.amount}`, 198, 210, {align: "right"})
+
+        Size(11)
+        Font("")
+        doc.text("CFR: CHITTAGONG", 6, 220)
+        doc.text("CONTAINER TYPE", 6, 224.5)
+        doc.text("COMMENTS:", 6, 247)
+        doc.text("20FT SLIP", 6, 251.5)
+
+        doc.text("VAT...................................:", 114.5, 220)
+        doc.text(`${DataService.totals.vat}`, 198, 220, {align: "right"})
+        doc.text("GROOS WEIGHT.............:", 114.5, 224.5)
+        doc.text(`${DataService.totals.gross}`, 198, 224.5, {align: "right"})
+        doc.text("NEW WEIGHT..................:", 114.5, 229)
+        doc.text(`${DataService.totals.net}`, 198, 229, {align: "right"})
+        doc.text("TOTAL CASES.................:", 114.5, 233.5)
+        doc.text(`${DataService.totals.cases}`, 198, 233.5, {align: "right"})
+        doc.text("TOTAL UNITS...................:", 114.5, 238)
+        doc.text(`${DataService.totals.un}`, 198, 238, {align: "right"})
+        doc.text("TOTAL LITERS.................:", 114.5, 242.5)
+        doc.text(`${DataService.totals.totalLiters}`, 198, 242.5, {align: "right"})
+    }
+
     const Footer = () => {
         Size(13)
         Font("Bold")
@@ -169,7 +196,7 @@ function PDF() {
     Invoice_Adress()
     Header_Table()
     Table()
-
+    Totals()
     Footer()
 
     doc.save("prueba2.pdf");
