@@ -2,6 +2,7 @@ import css from "./totalResults.module.css";
 import { DataService, updateTotals } from '../../../Repository/DataService';
 
 import { useEffect, useState } from "react";
+import Rounder from "../../../Repository/Rounder";
 
 export function TotalResults({isSaved, setIsSaved}) {
 
@@ -21,6 +22,8 @@ export function TotalResults({isSaved, setIsSaved}) {
         DataService.totals.totalLiters = liters
     }
 
+    Rounder();
+
     return (
         <div className={css.Container}>
             {console.log(DataService.totals)}
@@ -36,11 +39,11 @@ export function TotalResults({isSaved, setIsSaved}) {
                     </div>
                     <div className={css.Totals}>
                         <p>GROSS WEIGHT......:</p>
-                        <p>{totals.gross}</p>
+                        <p>{Math.round10(totals.gross, -3)}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>NET WEIGHT...........:</p>
-                        <p>{totals.net}</p>
+                        <p>{Math.round10(totals.net, -3)}</p>
                     </div>
                     <div className={css.Totals}>
                         <p>TOTAL CASES.........:</p>
@@ -53,7 +56,7 @@ export function TotalResults({isSaved, setIsSaved}) {
                     <div className={css.Totals}>
                         <p>TOTAL LITERS.........:</p>
                         <form className={css.FormLiters} onSubmit={ save }>
-                            <input onChange={ (e) => setLiters(e.target.value)} className={css.LitersInput} type="number" min="0.001" step="0.001" required />
+                            <input onChange={ (e) => setLiters(e.target.value)} className={css.LitersInput} type="number" min="0.001" max="999999" step="0.001" required />
                             <button type="submit"  >save</button>
                         </form>
                     </div>

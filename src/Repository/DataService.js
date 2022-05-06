@@ -206,15 +206,10 @@ export function updateTotals() {
     atributtes.forEach(
         atributte => DataService.totals[atributte] = sum(atributte)
     )
-    
-   
 
     // console.log(DataService.totals, DataService.totals["amount"] = sum("amount"))
 }
 
-
-
-console.log(Math.round10(1.005, -2));   // 1.01 -- compare this with Math.round(1.005*100)/100 above
 
 
   

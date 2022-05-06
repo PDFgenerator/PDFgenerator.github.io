@@ -4,11 +4,13 @@ import { DateTime } from "./Date";
 import logo from "../Assets/logo.png";
 import telefono from "../Assets/telefono.png";
 import mail from "../Assets/mail.png";
+import Rounder from "./Rounder";
 
 function PDF() {
     const doc = new jsPDF();
     // console.log(doc.getFontList())
-    
+    Rounder();
+
     const Font = (type) => { doc.setFont("Helvetica", type); }
     const Size = (num) => { doc.setFontSize(num); }
 
@@ -158,9 +160,9 @@ function PDF() {
         doc.text("VAT...................................:", 114.5, 220)
         doc.text(`${DataService.totals.vat}`, 198, 220, {align: "right"})
         doc.text("GROOS WEIGHT.............:", 114.5, 224.5)
-        doc.text(`${DataService.totals.gross}`, 198, 224.5, {align: "right"})
+        doc.text(`${Math.round10(DataService.totals.gross, -3)}`, 198, 224.5, {align: "right"})
         doc.text("NEW WEIGHT..................:", 114.5, 229)
-        doc.text(`${DataService.totals.net}`, 198, 229, {align: "right"})
+        doc.text(`${Math.round10(DataService.totals.net, -3)}`, 198, 229, {align: "right"})
         doc.text("TOTAL CASES.................:", 114.5, 233.5)
         doc.text(`${DataService.totals.cases}`, 198, 233.5, {align: "right"})
         doc.text("TOTAL UNITS...................:", 114.5, 238)
