@@ -199,7 +199,7 @@ function PDF() {
     Totals()
     Footer()
 
-    doc.save("prueba2.pdf");
+    doc.save(`Fasana_Invoice_${DateTime().date}.pdf`);
 }
 
 export default PDF;
