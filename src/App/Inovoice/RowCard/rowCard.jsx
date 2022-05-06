@@ -53,12 +53,12 @@ export function RowCard(props) {
     return (
         <form className={css.RowStyles} onSubmit={ save } >
             
-            <input defaultValue={props.code} onChange={ (e) => setCode(e.target.value) }        className={css.code} type="number" step="1" required />
-            <input defaultValue={props.description} onChange={ (e) => setDescription(e.target.value) } className={css.description} type="text" required />
-            <input defaultValue={props.cases} onChange={ (e) => setCases(e.target.value) }       className={css.cases} type="number" step="1" required/>
-            <input defaultValue={props.un} onChange={ (e) => setUn(e.target.value) }          className={css.un} type="number" step="1" required/>
-            <input defaultValue={props.net} onChange={ (e) => setNet(e.target.value) }         className={css.net} type="number" step="0.001" required/>
-            <input defaultValue={props.gross} onChange={ (e) => setGross(e.target.value) }       className={css.gross} type="number" step="0.001" required/>
+            <input defaultValue={props.code} onChange={ (e) => setCode(e.target.value) }        className={css.code} type="number" min="1" step="1" required />
+            <input defaultValue={props.description} onChange={ (e) => setDescription(e.target.value) } className={css.description} type="text" maxLength="43" required />
+            <input defaultValue={props.cases} onChange={ (e) => setCases(e.target.value) }       className={css.cases} type="number" min="1" step="1" required/>
+            <input defaultValue={props.un} onChange={ (e) => setUn(e.target.value) }          className={css.un} type="number" min="1" step="1" required/>
+            <input defaultValue={props.net} onChange={ (e) => setNet(e.target.value) }         className={css.net} type="number" min="0.001" step="0.001" required/>
+            <input defaultValue={props.gross} onChange={ (e) => setGross(e.target.value) }       className={css.gross} type="number" min="0.001" step="0.001" required/>
             <input defaultValue={props.price} onChange={ (e) => setPrice(e.target.value) }       className={css.price} type="number" step="0.01" required/>
             <input value={props.amount} className={css.amount} type="number" step="0.01" disabled/>
             <div className={css.FirstInput}>

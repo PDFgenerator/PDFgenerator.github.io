@@ -37,7 +37,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 2,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -48,7 +48,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 3,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -59,7 +59,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 4,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -70,7 +70,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 5,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -81,7 +81,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 6,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -92,7 +92,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 7,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -103,7 +103,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 8,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -114,7 +114,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 9,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -125,7 +125,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 10,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -136,7 +136,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 11,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
@@ -147,7 +147,7 @@ export let DataService = {
             amount: 0.00,
         },
         {
-            id: 1,
+            id: 12,
             code: "123456",
             description: "O.VEX DELIGHT OLIVA 12X1LT BVR BANGLADES",
             cases: 168,
