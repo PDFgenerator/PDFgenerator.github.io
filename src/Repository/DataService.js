@@ -1,4 +1,5 @@
 import { DateTime } from "./Date"
+import Rounder from "./Rounder"
 
 export let DataService = {
     header:{ 
@@ -209,3 +210,10 @@ export function updateTotals() {
 
     // console.log(DataService.totals, DataService.totals["amount"] = sum("amount"))
 }
+
+Rounder()
+
+console.log(Math.round10(1.005, -2));   // 1.01 -- compare this with Math.round(1.005*100)/100 above
+
+
+  
