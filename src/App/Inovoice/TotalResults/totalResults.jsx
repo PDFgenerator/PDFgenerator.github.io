@@ -26,7 +26,7 @@ export function TotalResults({isSaved, setIsSaved}) {
 
     return (
         <div className={css.Container}>
-            {console.log(DataService.totals)}
+            {/* {console.log(DataService.totals)} */}
             <section className={css.FirstSection}>
                 <article className={css.Cfr}>
                     <p>CFR:CHITTAGONG</p>
