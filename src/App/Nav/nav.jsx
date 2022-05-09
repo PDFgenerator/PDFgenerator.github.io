@@ -10,7 +10,7 @@ function Nav() {
     const GeneratePDF = () => {
         validate.ValidationsForPDF() ? PDF() : validate.PrintValidationFail();
     }
-
+    
     return (
         <nav className={css.nav}>
             <p>Digital Invoice</p>

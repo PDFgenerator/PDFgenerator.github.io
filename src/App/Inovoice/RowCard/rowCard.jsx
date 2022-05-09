@@ -45,7 +45,7 @@ export function RowCard(props) {
         props.setIsSaved(true)
         
         console.log(row)
-        console.log(DataService.table)
+        // console.log(DataService.table)
     }
 
     
