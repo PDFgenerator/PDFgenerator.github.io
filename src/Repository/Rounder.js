@@ -25,6 +25,13 @@ function Rounder () {
         return decimalAdjust('round', value, exp);
       };
     }
+
+    // Decimal ceil
+    if (!Math.ceil10) {
+      Math.ceil10 = function(value, exp) {
+        return decimalAdjust('ceil', value, exp);
+      };
+    }
    
 }
 export default Rounder;

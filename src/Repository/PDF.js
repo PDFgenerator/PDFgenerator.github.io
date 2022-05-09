@@ -43,7 +43,9 @@ function PDF() {
     }
 
     /* Logo */
-    doc.addImage(logo, "PNG", 10, 18, 54, 15, "logo", "NONE", 0);
+    const Logo = () => {
+        doc.addImage(logo, "PNG", 10, 18, 54, 15, "logo", "NONE", 0);
+    }
 
     const Proforma_Invoice = () => {
         Size(10)
@@ -99,7 +101,7 @@ function PDF() {
         doc.text("PAYMENT INSTRUMENT: L/C", 105, 97.6)
     }
 
-    const Table = () => {
+    const Table = (paramInit, paramFinal) => {
         const headers = [
             'CODE',
             'DESCRIPTION',
@@ -113,9 +115,14 @@ function PDF() {
         
         const rows = () => {
             let rows = DataService.table;
+            let rows12 = [];
             let result = [];
-            
-            rows.forEach(row => {
+            for (let i = paramInit; i < paramFinal; i++) {
+                rows12.push(rows[i])
+            }
+
+
+            rows12.forEach(row => {
                 let pdfRow = {
                     CODE: row.code.toString(),
                     DESCRIPTION: row.description.toString(),
@@ -190,16 +197,44 @@ function PDF() {
     }
 
 
-    Title()
-    Date()
-    Time()
-    Proforma_Invoice()
-    Delivery_Adress()
-    Invoice_Adress()
-    Header_Table()
-    Table()
-    Totals()
-    Footer()
+    const MorePages = () => {    
+        
+        Title()
+        Logo()
+        Date()
+        Time()
+        Proforma_Invoice()
+        Delivery_Adress()
+        Invoice_Adress()
+        Header_Table()
+        Table(0, 12)
+        Footer()
+
+        doc.addPage()
+
+        FinalPage()
+    }
+    const FinalPage = () => {       
+        Title()
+        Logo()
+        Date()
+        Time()
+        Proforma_Invoice()
+        Delivery_Adress()
+        Invoice_Adress()
+        Header_Table()
+        Table(12, DataService.table.length)
+        Totals()
+        Footer()
+    }
+
+    let numPages = Math.ceil10(DataService.table.length / 12)
+    
+    // console.log(DataService.table.length / 12, numPages, Math.ceil10(51, 1))
+
+    numPages > 1 ? MorePages() : FinalPage()
+    
+    
 
     doc.save(`Fasana_Invoice_${DateTime().date}.pdf`);
 }
