@@ -197,24 +197,20 @@ function PDF() {
     }
 
 
+    let numPages = Math.ceil10(DataService.table.length / 12)
+
     const MorePages = () => {    
-        
-        Title()
-        Logo()
-        Date()
-        Time()
-        Proforma_Invoice()
-        Delivery_Adress()
-        Invoice_Adress()
-        Header_Table()
-        Table(0, 12)
-        Footer()
+        let totalRows = DataService.table.length;
+        let rest = totalRows % 12
+        console.log(totalRows, rest)
+        Page(0, 12)
+
+        MidPages(totalRows)
 
         doc.addPage()
-
-        FinalPage()
+        FinalPage(totalRows - rest)
     }
-    const FinalPage = () => {       
+    const Page = (paramInit, paramFinal) => {
         Title()
         Logo()
         Date()
@@ -223,14 +219,36 @@ function PDF() {
         Delivery_Adress()
         Invoice_Adress()
         Header_Table()
-        Table(12, DataService.table.length)
+        Table(paramInit, paramFinal)
+        Footer()
+    }
+    const MidPages = (totalRows) => {
+        let arrayI = [];
+
+        for (let i = 0; i < totalRows; i++) {
+            if ( i % 12 === 0 ) arrayI.push(i)
+        }
+        console.log(arrayI)
+
+        for (let i = 1; i < numPages-1; i++) {
+            doc.addPage()   
+            Page(arrayI[i], arrayI[i+1])
+            console.log("a")
+        }
+    }
+    const FinalPage = (paramInit) => {       
+        Title()
+        Logo()
+        Date()
+        Time()
+        Proforma_Invoice()
+        Delivery_Adress()
+        Invoice_Adress()
+        Header_Table()
+        Table(paramInit, DataService.table.length)
         Totals()
         Footer()
     }
-
-    let numPages = Math.ceil10(DataService.table.length / 12)
-    
-    // console.log(DataService.table.length / 12, numPages, Math.ceil10(51, 1))
 
     numPages > 1 ? MorePages() : FinalPage()
     
