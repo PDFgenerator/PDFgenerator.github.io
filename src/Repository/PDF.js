@@ -248,9 +248,10 @@ function PDF() {
         Table(paramInit, DataService.table.length)
         Totals()
         Footer()
+        console.log("Finalpage")
     }
 
-    numPages > 1 ? MorePages() : FinalPage()
+    numPages > 1 ? MorePages() : FinalPage(0)
     
     
 
