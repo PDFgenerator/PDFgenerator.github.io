@@ -18,7 +18,7 @@ function Table() {
         setArray(DataService.table)
         setTotals(DataService.totals.amount)
         setLoading(true)
-        setIsSaved(false)
+        // setIsSaved(false)
     },[loading, isSaved])
 
 

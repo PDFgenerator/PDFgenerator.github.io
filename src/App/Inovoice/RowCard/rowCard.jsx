@@ -18,7 +18,7 @@ export function RowCard(props) {
    
     const saveInMobile = () => {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-            window.location.reload(true)
+           setInterval(window.location.reload(true), 104000) 
         }
     }
 
