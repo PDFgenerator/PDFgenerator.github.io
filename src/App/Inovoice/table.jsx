@@ -12,19 +12,19 @@ function Table() {
     const [array, setArray] = useState([]);
     const [loading, setLoading] = useState(false)
     const [isSaved, setIsSaved] = useState(false)
-    // const [isDeleting, setIsDeleting] = useState(false)
 
     useEffect( () => {
-        calculateAmount(DataService.table)
+        calculateAmount(DataService.table) 
         setArray(DataService.table)
         setTotals(DataService.totals.amount)
         setLoading(true)
-        // setIsDeleting(false)
     },[loading, isSaved])
+
 
     const create = () => {
         setLoading(true)
-
+        let array = DataService.table;
+        
         let newROW = {
             id: uuidv4(),
             code: "1",
@@ -38,16 +38,15 @@ function Table() {
         }
 
         array.push(newROW)
+
+        setArray(array)
+        sessionStorage.setItem("DataBase", JSON.stringify(DataService))
     }
 
     const deleteById = (id) => {
         DataService.table = DataService.table.filter(row => row.id !== id) 
-
-        console.log(DataService.table)
+        sessionStorage.setItem("DataBase", JSON.stringify(DataService))
     }
-
-    // console.log("Rows counter: ", array.length)
-    // console.log("Rows counter: ", array)
 
     return (
         <div>
@@ -68,7 +67,6 @@ function Table() {
                     
                     {   loading?
                         array.map( (row, index) => {
-                            // console.log(row.code);
                             return  <RowCard 
                                         key={index}
                                         id={row.id}

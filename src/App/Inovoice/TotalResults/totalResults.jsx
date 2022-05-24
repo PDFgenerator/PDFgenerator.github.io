@@ -4,6 +4,7 @@ import { DataService, updateTotals } from '../../../Repository/DataService';
 import { useEffect, useState } from "react";
 import Rounder from "../../../Repository/Rounder";
 
+
 export function TotalResults({isSaved, setIsSaved}) {
 
     const [totals, setTotals] = useState(DataService.totals);
@@ -14,12 +15,13 @@ export function TotalResults({isSaved, setIsSaved}) {
         updateTotals()
         setIsSaved(false)
     },[isSaved])
-
+    
 
     const save = (e) => {
         e.preventDefault()
 
         DataService.totals.totalLiters = liters
+        sessionStorage.setItem("DataBase", JSON.stringify(DataService))
     }
 
     Rounder();
@@ -56,7 +58,7 @@ export function TotalResults({isSaved, setIsSaved}) {
                     <div className={css.Totals}>
                         <p>TOTAL LITERS.........:</p>
                         <form className={css.FormLiters} onSubmit={ save }>
-                            <input onChange={ (e) => setLiters(e.target.value)} className={css.LitersInput} type="number" min="0.001" max="999999" step="0.001" required />
+                            <input defaultValue={totals.totalLiters} onChange={ (e) => setLiters(e.target.value)} className={css.LitersInput} type="number" min="0.001" max="999999" step="0.001" required />
                             <button type="submit"  >save</button>
                         </form>
                     </div>

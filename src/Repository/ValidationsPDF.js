@@ -1,5 +1,6 @@
 import { DataService } from './DataService';
 
+
 class ValidationsPDF {
 
     #MoreOfZero(num) {
@@ -24,7 +25,6 @@ class ValidationsPDF {
         let arrayMap = array.map(
             row => [parseFloat(row.cases), parseFloat(row.un), parseFloat(row.net), parseFloat(row.gross)]
         )
-        // console.log(arrayMap)
 
         arrayMap.forEach( row => {
             return row.find(cell => {
@@ -32,7 +32,6 @@ class ValidationsPDF {
             })
         })
 
-        // console.log(result)
         return result;
     }
 

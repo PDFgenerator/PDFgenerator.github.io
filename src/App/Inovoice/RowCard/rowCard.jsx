@@ -15,14 +15,14 @@ export function RowCard(props) {
     const [gross, setGross] = useState();
     const [price, setPrice] = useState(0);
     const [amount, setAmount] = useState(props.amount);
+   
 
-    
     const edit = (rowToEdit) => {
-        // console.log(DataService.table.filter( row => row.id === rowToEdit.id))
         let row = DataService.table.filter( row => row.id === rowToEdit.id)
         let index = DataService.table.indexOf(row[0])
 
         DataService.table[index] = rowToEdit;
+        sessionStorage.setItem("DataBase", JSON.stringify(DataService))
     }
 
     const save = (e) => {
@@ -37,7 +37,6 @@ export function RowCard(props) {
         if (!net) {row.net = props.net};
         if (!gross) {row.gross = props.gross};
         if (!price) {row.price = props.price};
-        // if (!amount) {row.amount = props.amount};
 
         calculateAmount(DataService.table)
         edit(row)
@@ -45,7 +44,6 @@ export function RowCard(props) {
         props.setIsSaved(true)
         
         console.log(row)
-        // console.log(DataService.table)
     }
 
     
@@ -63,7 +61,7 @@ export function RowCard(props) {
             <input value={props.amount} className={css.amount} type="number" step="0.01" disabled/>
             <div className={css.FirstInput}>
                 <button type="submit" ><img src={disquete} alt="disquete" /></button>
-                <button onClick={ () => {props.deleteById(id); props.setIsDeleting(false)}} ><img className={css.Bucket} src={bucket} alt="bucket" /></button>
+                <button type="submit" onClick={ () => {props.deleteById(id); props.setIsDeleting(false)}} ><img className={css.Bucket} src={bucket} alt="bucket" /></button>
             </div>
         </form>
     )

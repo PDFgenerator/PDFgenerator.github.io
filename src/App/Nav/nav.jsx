@@ -17,7 +17,7 @@ function Nav() {
             <div className={css.Generate}>
                 <button onClick={ () => GeneratePDF() }><p>Generate PDF</p></button>
             </div>
-            <div className={css.ContainerBurguer}><img src={burger} alt="" /></div>
+            <div className={css.ContainerBurguer}><img src={burger} alt="burger" /></div>
         </nav>
     )
 }

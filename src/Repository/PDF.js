@@ -42,7 +42,6 @@ function PDF() {
         doc.text(DateTime().time, 171 , 17.5);
     }
 
-    /* Logo */
     const Logo = () => {
         doc.addImage(logo, "PNG", 10, 18, 54, 15, "logo", "NONE", 0);
     }
@@ -116,14 +115,14 @@ function PDF() {
         const rows = () => {
             let rows = DataService.table;
             let rows12 = [];
-            let result = [];
+            // let result = [];
             for (let i = paramInit; i < paramFinal; i++) {
                 rows12.push(rows[i])
             }
 
 
-            rows12.forEach(row => {
-                let pdfRow = {
+            let result = rows12.map(row => //{
+                row = {
                     CODE: row.code.toString(),
                     DESCRIPTION: row.description.toString(),
                     CASES: row.cases.toString(),
@@ -133,13 +132,13 @@ function PDF() {
                     PRICE: row.price.toString(),
                     AMOUNT: row.amount.toString(),
                 }
-                result.push(pdfRow)
-            })
+                // result.push(pdfRow)
+            //}
+            )
+            console.log(result)
             return result;
         }
-        
-        // doc.cell("center")
-        
+                
         doc.table(6, 100, rows(), headers, 
             { 
                 autoSize: true,
@@ -248,7 +247,7 @@ function PDF() {
         Table(paramInit, DataService.table.length)
         Totals()
         Footer()
-        console.log("Finalpage")
+        // console.log("Finalpage")
     }
 
     numPages > 1 ? MorePages() : FinalPage(0)
