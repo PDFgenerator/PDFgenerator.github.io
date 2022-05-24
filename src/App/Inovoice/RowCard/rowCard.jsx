@@ -57,7 +57,7 @@ export function RowCard(props) {
             <input defaultValue={props.un} onChange={ (e) => setUn(e.target.value) }          className={css.un} type="number" min="1" max="99999" step="1" required/>
             <input defaultValue={props.net} onChange={ (e) => setNet(e.target.value) }         className={css.net} type="number" min="0.001" max="99999.999" step="0.001" required/>
             <input defaultValue={props.gross} onChange={ (e) => setGross(e.target.value) }       className={css.gross} type="number" min="0.001" max="99999.999" step="0.001" required/>
-            <input defaultValue={props.price} onChange={ (e) => setPrice(e.target.value) }       className={css.price} type="number" step="0.01" required/>
+            <input defaultValue={props.price} onChange={ (e) => setPrice(e.target.value) }       className={css.price} type="number" step="0.01" min="0.00" required/>
             <input value={props.amount} className={css.amount} type="number" step="0.01" disabled/>
             <div className={css.FirstInput}>
                 <button type="submit" ><img src={disquete} alt="disquete" /></button>
