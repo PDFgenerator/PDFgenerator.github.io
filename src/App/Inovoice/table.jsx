@@ -28,7 +28,7 @@ function Table() {
         let newROW = {
             id: uuidv4(),
             code: "1",
-            description: "example",
+            description: "EXAMPLE",
             cases: "0",
             un: "0.000",
             net: "0.000",
