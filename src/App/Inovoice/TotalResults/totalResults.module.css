@@ -28,6 +28,10 @@
     text-align: start;
 }
 
+.TotalLiters {
+    white-space: nowrap;
+}
+
 .FormLiters {
     display: flex;
     flex-direction: row-reverse;

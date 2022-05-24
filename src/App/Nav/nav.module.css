@@ -12,10 +12,12 @@
     width: 100vw;
 }
 
-.nav p {
+.navTitle {
     width: 20%;
     color: #BCE9E5;
     font-size: 1.8rem;
+    white-space: nowrap;
+    margin-left: 2vw;
 }
 
 .Generate {
@@ -49,5 +51,25 @@
 
 .ContainerBurguer img {
     width: 10%;
+}
+
+@media (max-width: 920px) {
+    .ContainerBurguer img {
+        width: 14%;
+    }
+}
+
+@media (max-width: 750px) {
+    .navTitle {
+        font-size: 1.4rem;
+    }
+
+    .Generate button {
+        margin: 1.2vh 0;
+    }
+
+    .ContainerBurguer img {
+        width: 18%;
+    }
 }
 

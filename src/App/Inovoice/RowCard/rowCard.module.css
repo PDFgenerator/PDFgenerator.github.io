@@ -9,10 +9,7 @@ input {
     padding: 0;
 }
 
-.RowStyles {
-    display: flex;
-
-}
+.RowStyles { display: flex; }
 .FirstInput { 
     width:10%; 
     border-right: 2px solid black; 
@@ -54,4 +51,22 @@ input {
 
 .Bucket {
     width: 35% !important;
+}
+
+@media (max-width: 920px) {
+    .FirstInput button img {
+        width: 50%;
+    }
+    .Bucket {
+        width: 51% !important;
+    }
+}
+
+@media (max-width: 750px) {
+    .FirstInput button img {
+        width: 60%;
+    }
+    .Bucket {
+        width: 61% !important;
+    }
 }

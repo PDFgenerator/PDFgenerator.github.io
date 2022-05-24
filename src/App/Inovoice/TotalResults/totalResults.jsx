@@ -56,7 +56,7 @@ export function TotalResults({isSaved, setIsSaved}) {
                         <p>{totals.un}</p>
                     </div>
                     <div className={css.Totals}>
-                        <p>TOTAL LITERS.........:</p>
+                        <p className={css.TotalLiters}>TOTAL LITERS.........:</p>
                         <form className={css.FormLiters} onSubmit={ save }>
                             <input defaultValue={totals.totalLiters} onChange={ (e) => setLiters(e.target.value)} className={css.LitersInput} type="number" min="0.001" max="999999" step="0.001" required />
                             <button type="submit"  >save</button>

@@ -13,7 +13,7 @@ function Nav() {
     
     return (
         <nav className={css.nav}>
-            <p>Digital Invoice</p>
+            <p className={css.navTitle}>Digital Invoice</p>
             <div className={css.Generate}>
                 <button onClick={ () => GeneratePDF() }><p>Generate PDF</p></button>
             </div>

@@ -46,6 +46,11 @@ export function RowCard(props) {
         console.log(row)
     }
 
+    const saveInMobile = () => {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.reload(true)
+        }
+    }
     
 
     return (
@@ -60,8 +65,10 @@ export function RowCard(props) {
             <input defaultValue={props.price} onChange={ (e) => setPrice(e.target.value) }       className={css.price} type="number" step="0.01" min="0.00" required/>
             <input value={props.amount} className={css.amount} type="number" step="0.01" disabled/>
             <div className={css.FirstInput}>
-                <button type="submit" ><img src={disquete} alt="disquete" /></button>
-                <button type="submit" onClick={ () => {props.deleteById(id); props.setIsDeleting(false)}} ><img className={css.Bucket} src={bucket} alt="bucket" /></button>
+                <button type="submit" onTouchStart={ ()=>{ saveInMobile() }} ><img src={disquete} alt="disquete" /></button>
+                <button type="submit" onClick={ () => {props.deleteById(id); props.setIsDeleting(false)}}  >
+                    <img className={css.Bucket} src={bucket} alt="bucket" />
+                </button>
             </div>
         </form>
     )

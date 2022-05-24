@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-@media (max-width:1140px) {
+@media (orientation: portrait) {
   .ContainerApp {
       display: none;
   }
