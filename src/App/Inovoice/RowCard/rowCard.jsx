@@ -16,6 +16,11 @@ export function RowCard(props) {
     const [price, setPrice] = useState(0);
     const [amount, setAmount] = useState(props.amount);
    
+    const saveInMobile = () => {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.reload(true)
+        }
+    }
 
     const edit = (rowToEdit) => {
         let row = DataService.table.filter( row => row.id === rowToEdit.id)
@@ -42,16 +47,10 @@ export function RowCard(props) {
         edit(row)
         updateTotals()
         props.setIsSaved(true)
-        
+        saveInMobile()
+
         console.log(row)
     }
-
-    const saveInMobile = () => {
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-            window.location.reload(true)
-        }
-    }
-    
 
     return (
         <form className={css.RowStyles} onSubmit={ save } >
@@ -65,7 +64,8 @@ export function RowCard(props) {
             <input defaultValue={props.price} onChange={ (e) => setPrice(e.target.value) }       className={css.price} type="number" step="0.01" min="0.00" required/>
             <input value={props.amount} className={css.amount} type="number" step="0.01" disabled/>
             <div className={css.FirstInput}>
-                <button type="submit" onTouchStart={ ()=>{ saveInMobile() }} ><img src={disquete} alt="disquete" /></button>
+            {/* onTouchStart={ ()=>{ saveInMobile() }} */}
+                <button type="submit"  ><img src={disquete} alt="disquete" /></button>
                 <button type="submit" onClick={ () => {props.deleteById(id); props.setIsDeleting(false)}}  >
                     <img className={css.Bucket} src={bucket} alt="bucket" />
                 </button>
