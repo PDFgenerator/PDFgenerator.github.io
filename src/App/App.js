@@ -3,6 +3,7 @@ import Nav from './Nav/nav.jsx';
 import Table from './Inovoice/table.jsx';
 import Footer from './Inovoice/Footer/footer';
 import Header from './Inovoice/Header/header';
+import { DeliveryAddress } from './BillingData/deliveryAddress';
 import ScreenNotResponsive from './ScreenNotResponsive/screenNotResponsive';
 
 function App() {  
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <Table />
         <Footer />
+        <DeliveryAddress />
       </div>
       <ScreenNotResponsive />
     </div>
