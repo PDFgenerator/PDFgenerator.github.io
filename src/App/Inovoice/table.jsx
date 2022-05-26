@@ -105,7 +105,11 @@ function Table() {
                     <div>{amount}</div>
                     <h5 className={css.Span2}>TOTALS</h5>
                 </footer>
-                <button onClick={ () => {create(); setLoading(false)} } className={css.ButtonPlus}><img src={plus} alt="plus" /></button>
+                <div className={css.ButtonPlus} >
+                    <button onClick={ () => {create(); setLoading(false)} } >
+                        <img src={plus} alt="plus" />
+                    </button>
+                </div>
             </div>
             <TotalResults isSaved={isSaved} setIsSaved={setIsSaved}/>
         </div>

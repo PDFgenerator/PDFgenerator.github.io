@@ -112,8 +112,20 @@
     background: none;
 }
 
-.ButtonPlus img {
+.ButtonPlus button {
     width: 30px;
+    height: 30px;
+    background-color: none;
+    border: none;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ButtonPlus img {
+    width: 150%!important;
     transition: all 0.1s linear;
 }
 
