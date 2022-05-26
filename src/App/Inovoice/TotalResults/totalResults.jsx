@@ -40,14 +40,6 @@ export function TotalResults({isSaved, setIsSaved}) {
                         <p>{totals.vat}</p>
                     </div>
                     <div className={css.Totals}>
-                        <p>GROSS WEIGHT......:</p>
-                        <p>{Math.round10(totals.gross, -3)}</p>
-                    </div>
-                    <div className={css.Totals}>
-                        <p>NET WEIGHT...........:</p>
-                        <p>{Math.round10(totals.net, -3)}</p>
-                    </div>
-                    <div className={css.Totals}>
                         <p>TOTAL CASES.........:</p>
                         <p>{totals.cases}</p>
                     </div>

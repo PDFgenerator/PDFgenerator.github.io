@@ -8,7 +8,10 @@ import { v4 as uuidv4 } from "uuid";
 
 function Table() {
 
-    const [total, setTotals] = useState(DataService.totals.amount);
+    const [net, setNet] = useState(DataService.totals.net);
+    const [gross, setGross] = useState(DataService.totals.gross);
+    const [price, setPrice] = useState(DataService.totals.price);
+    const [amount, setAmount] = useState(DataService.totals.amount);
     const [array, setArray] = useState([]);
     const [loading, setLoading] = useState(false)
     const [isSaved, setIsSaved] = useState(false)
@@ -16,7 +19,12 @@ function Table() {
     useEffect( () => {
         calculateAmount(DataService.table) 
         setArray(DataService.table)
-        setTotals(DataService.totals.amount)
+
+        setNet(DataService.totals.net)
+        setGross(DataService.totals.gross)
+        setPrice(DataService.totals.price)
+        setAmount(DataService.totals.amount)
+
         setLoading(true)
         // setIsSaved(false)
     },[loading, isSaved])
@@ -89,8 +97,15 @@ function Table() {
                     }
                 </section>
 
+                <footer className={css.Span}>`</footer>
+                <footer className={css.Totals}>
+                    <div className={css.TotalNet}>{net}</div>
+                    <div>{gross}</div>
+                    <div>{price}</div>
+                    <div>{amount}</div>
+                    <h5 className={css.Span2}>TOTALS</h5>
+                </footer>
                 <button onClick={ () => {create(); setLoading(false)} } className={css.ButtonPlus}><img src={plus} alt="plus" /></button>
-                <footer>Total Amount USD&nbsp;&nbsp;&nbsp;&nbsp;{total}</footer>
             </div>
             <TotalResults isSaved={isSaved} setIsSaved={setIsSaved}/>
         </div>

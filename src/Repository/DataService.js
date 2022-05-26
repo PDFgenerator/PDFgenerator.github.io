@@ -353,6 +353,7 @@ export let DataService = JSON.parse(sessionStorage.getItem("DataBase")) ?
             vat: 0.00,
             gross: 0.000,
             net: 0.000,
+            price: 0.00,
             cases: 0,
             un: 0.000,
             totalLiters: 0.000,
@@ -367,7 +368,7 @@ export let DataService = JSON.parse(sessionStorage.getItem("DataBase")) ?
 
 
 let array = DataService.table
-let atributtes = ["cases", "un", "net", "gross", "amount"]
+let atributtes = ["cases", "un", "net", "gross", "amount", "price"]
 Rounder()
 
 export function calculateAmount(param) {

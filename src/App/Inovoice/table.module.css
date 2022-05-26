@@ -42,15 +42,61 @@
     justify-content: center;
 }
 
-.ContainerTable footer {
-    width: 100%;
+.Totals {
+    background-color: rgba(60, 174, 163, 0.242);
+    float:right;
+
+    width: 50%;
 
     text-align: right;
-    border-top: 3px solid black;
+    border-top: 3.3px solid black;
     border-right: 2px solid black;
-    border-left: 2px solid black;
+    border-left: 0px solid black; 
 
-    padding-right: 10px;
+    display: flex;
+}
+.TotalNet { border-left: 1px solid black!important; }
+.Totals div { 
+    width: 20%; 
+
+    /* margin-right: 2.5%; */
+
+    text-align: center;
+
+    border-right: 0px solid black;
+    border-left: 3px solid black;
+ }
+
+.Span {
+    float:left;
+    color: white;
+
+    width: 50%;
+
+    text-align: left;
+    border-top: 3px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+.Span2{
+    width: 20%; 
+
+    /* margin-right: 2.2%;
+    padding-left: 2.5%; */
+    /* padding-top: 0.3%; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-right: 0px solid black;
+    border-left: 3px solid black;
+
+    font-weight: bolder;
+    font-family: 'Inter', sans-serif;
+
 }
 
 .ButtonPlus {

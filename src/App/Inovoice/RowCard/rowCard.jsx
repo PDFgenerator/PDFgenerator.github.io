@@ -70,6 +70,7 @@ export function RowCard(props) {
                     <img className={css.Bucket} src={bucket} alt="bucket" />
                 </button>
             </div>
+            {/* <p>{code * 5}</p> ; props.ReactCode(e.target.value) */}
         </form>
     )
 }
